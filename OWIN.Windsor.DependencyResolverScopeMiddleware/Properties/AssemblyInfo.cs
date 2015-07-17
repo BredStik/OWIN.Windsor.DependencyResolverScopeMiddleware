@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("OWIN.Windsor.DependencyResolverScopeMiddleware")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Creates a Windsor dependency scope per OWIN WebAPI request allowing to use a per request lifestyle component registration in a self-host environment.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("SNC-Lavalin")]
+[assembly: AssemblyCompany("Mathieu Lafontaine")]
 [assembly: AssemblyProduct("OWIN.Windsor.DependencyResolverScopeMiddleware")]
-[assembly: AssemblyCopyright("Copyright © SNC-Lavalin 2015")]
+[assembly: AssemblyCopyright("Copyright © Mathieu Lafontaine 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.9.*")]
+[assembly: AssemblyFileVersion("0.9.*")]

@@ -35,22 +35,9 @@ namespace OwinSelfHosting
             app.EnableWindowsAuthentication();
 
             app.UseErrorPage(ErrorPageOptions.ShowAll)
+                //use windsor as dependency resolver and use a scope per request
                 .UseWindsorDependencyResolverScope(config, container)
                 .UseWebApi(config);
-                
-            //.Use(async (context, next) =>
-            //{
-            //    var ioc = context.Environment["resolver"] as IDependencyResolver;
-
-            //    var helloService = ioc.GetService(typeof(IHelloService)) as IHelloService;
-
-            //    helloService.SayHello();
-
-            //    context.Response.ContentType = "text/plain";
-            //    await context.Response.WriteAsync(string.Format("hello world! from {0}", context.Request.Path.Value));
-
-            //    await next.Invoke();
-            //});
         }
 
         private IWindsorContainer BootstrapContainer()
@@ -61,6 +48,9 @@ namespace OwinSelfHosting
             container.Register(Component.For<ISessionFactory>().UsingFactoryMethod((x, y) => { 
                 return SessionFactoryHelper.GetSessionFactory(); 
             }));
+
+
+            //to configure components per request, use LifestyleScoped()
             container.Register(Component.For<ISession>().UsingFactoryMethod((x, y) => { return x.Resolve<ISessionFactory>().OpenSession(); }).OnDestroy(session => { 
                 session.Dispose(); 
             }).LifestyleScoped());
