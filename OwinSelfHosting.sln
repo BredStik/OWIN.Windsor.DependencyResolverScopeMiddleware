@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Web
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwinSelfHosting", "OwinSelfHosting\OwinSelfHosting.csproj", "{4D868D02-16B9-45CD-BADD-C8EB86BF6010}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OWIN.Windsor.DependencyResolverScopeMiddleware", "OWIN.Windsor.DependencyResolverScopeMiddleware\OWIN.Windsor.DependencyResolverScopeMiddleware.csproj", "{6B64AFE7-0EC1-44C3-B6F1-BE81711C584B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4D868D02-16B9-45CD-BADD-C8EB86BF6010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D868D02-16B9-45CD-BADD-C8EB86BF6010}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D868D02-16B9-45CD-BADD-C8EB86BF6010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B64AFE7-0EC1-44C3-B6F1-BE81711C584B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B64AFE7-0EC1-44C3-B6F1-BE81711C584B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B64AFE7-0EC1-44C3-B6F1-BE81711C584B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B64AFE7-0EC1-44C3-B6F1-BE81711C584B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

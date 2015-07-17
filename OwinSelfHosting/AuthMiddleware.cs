@@ -13,6 +13,7 @@ using System.IO;
 using OwinSelfHosting.Extensions;
 using NHibernate;
 using OwinSelfHosting.Entities;
+using OWIN.Windsor.DependencyResolverScopeMiddleware;
 
 namespace OwinSelfHosting
 {

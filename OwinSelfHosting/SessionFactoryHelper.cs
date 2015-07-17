@@ -20,7 +20,7 @@ namespace OwinSelfHosting
         {
             //fluently configure from hibernate config
             var fluentConfig = Fluently.Configure()
-                .Database(SQLiteConfiguration.Standard.ConnectionString("Data Source=nhibernate.db;Version=3").ShowSql());//);
+                .Database(SQLiteConfiguration.Standard.ConnectionString("Data Source=nhibernate.db;Version=3"));//.ShowSql());//);
 
 
             ////add fluent mappings, add conventions

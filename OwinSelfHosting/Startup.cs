@@ -14,6 +14,7 @@ using System.Web.Http;
 using System.Net;
 using NHibernate;
 using Microsoft.Owin.Diagnostics;
+using OWIN.Windsor.DependencyResolverScopeMiddleware;
 
 namespace OwinSelfHosting
 {
@@ -21,8 +22,7 @@ namespace OwinSelfHosting
     {
         public void Configuration(IAppBuilder app)
         {
-            var container = BootstrapContainer();
-            var resolver = new WindsorDependencyResolver(container);
+            var container = BootstrapContainer();            
 
             // Configure Web API for self-host. 
             HttpConfiguration config = new HttpConfiguration();
@@ -32,13 +32,10 @@ namespace OwinSelfHosting
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            config.DependencyResolver = resolver;
-
             app.EnableWindowsAuthentication();
 
-            app.UseErrorPage(ErrorPageOptions.ShowAll).UseDependencyResolverScope(resolver)
-                .UseAuth()
-                
+            app.UseErrorPage(ErrorPageOptions.ShowAll)
+                .UseWindsorDependencyResolverScope(config, container)
                 .UseWebApi(config);
                 
             //.Use(async (context, next) =>
@@ -61,8 +58,12 @@ namespace OwinSelfHosting
             var container = new WindsorContainer();
 
             //NHibernate
-            container.Register(Component.For<ISessionFactory>().UsingFactoryMethod((x, y) => { return SessionFactoryHelper.GetSessionFactory(); }));
-            container.Register(Component.For<ISession>().UsingFactoryMethod((x, y) => { return x.Resolve<ISessionFactory>().OpenSession(); }).OnDestroy(session => session.Dispose()).LifestyleScoped());
+            container.Register(Component.For<ISessionFactory>().UsingFactoryMethod((x, y) => { 
+                return SessionFactoryHelper.GetSessionFactory(); 
+            }));
+            container.Register(Component.For<ISession>().UsingFactoryMethod((x, y) => { return x.Resolve<ISessionFactory>().OpenSession(); }).OnDestroy(session => { 
+                session.Dispose(); 
+            }).LifestyleScoped());
 
             
             container.Register(Component.For<IAuthService>().ImplementedBy<AuthService>().LifestyleScoped());

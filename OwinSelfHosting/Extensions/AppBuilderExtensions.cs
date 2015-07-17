@@ -11,15 +11,15 @@ namespace OwinSelfHosting.Extensions
 {
     public static class AppBuilderExtensions
     {
-        public static IAppBuilder UseDependencyResolverScope(this IAppBuilder app, IDependencyResolver resolver)
-        {
-            return app.Use<DependencyResolverScopeMiddleware>(resolver);
-        }
+        //public static IAppBuilder UseDependencyResolverScope(this IAppBuilder app, IDependencyResolver resolver)
+        //{
+        //    return app.Use<DependencyResolverScopeMiddleware>(resolver);
+        //}
 
-        public static IAppBuilder UseAuth(this IAppBuilder app)
-        {
-            return app.Use<AuthMiddleware>();
-        }
+        //public static IAppBuilder UseAuth(this IAppBuilder app)
+        //{
+        //    return app.Use<AuthMiddleware>();
+        //}
 
         public static void EnableWindowsAuthentication(this IAppBuilder app)
         {

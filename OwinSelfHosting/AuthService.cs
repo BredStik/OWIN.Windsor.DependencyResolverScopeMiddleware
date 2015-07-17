@@ -26,10 +26,10 @@ namespace OwinSelfHosting
 
             if (!validUserLogins.Contains(userName, StringComparer.InvariantCultureIgnoreCase))
             {
-                return null;
+                //return null;
             }
 
-            //Console.WriteLine(_session.GetSessionImplementation().SessionId);
+            Console.WriteLine(_session.GetSessionImplementation().SessionId);
             return new GenericPrincipal(new GenericIdentity(userName), new string[] { "guest" });
         }
     }
