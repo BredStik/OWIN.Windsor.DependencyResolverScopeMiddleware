@@ -11,3 +11,5 @@ Creates a Windsor dependency scope per OWIN WebAPI request allowing to use a per
 
 Your scoped components will by created once per request and disposed at the end of it automatically.
 
+If you ever need to use the dependency resolver inside a subsequent middleware, just use the "GetDependencyResolver" extension method on the IOwinContext from the "OWIN.Windsor.DependencyResolverScopeMiddleware" namespace.
+
