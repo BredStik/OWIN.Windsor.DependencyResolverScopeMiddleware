@@ -75,6 +75,10 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="OWIN.Windsor.DependencyResolverScopeMiddleware, Version=0.9.5676.18344, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\OWIN.Windsor.DependencyResolverScopeMiddleware.0.9.5676.18344\lib\net45\OWIN.Windsor.DependencyResolverScopeMiddleware.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -132,12 +136,6 @@
     <Content Include="x86\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\OWIN.Windsor.DependencyResolverScopeMiddleware\OWIN.Windsor.DependencyResolverScopeMiddleware.csproj">
-      <Project>{6b64afe7-0ec1-44c3-b6f1-be81711c584b}</Project>
-      <Name>OWIN.Windsor.DependencyResolverScopeMiddleware</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

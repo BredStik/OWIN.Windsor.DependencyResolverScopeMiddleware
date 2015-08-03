@@ -13,7 +13,7 @@ namespace OwinSelfHosting
         {
             using (Microsoft.Owin.Hosting.WebApp.Start<Startup>("http://localhost:7766/"))
             {
-                Parallel.For(0, 1, new ParallelOptions{MaxDegreeOfParallelism = 8}, async index => {
+                Parallel.For(0, 10, new ParallelOptions{MaxDegreeOfParallelism = 8}, async index => {
                     var client = new HttpClient(new HttpClientHandler()
                     {
                         UseDefaultCredentials = true
