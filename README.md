@@ -1,7 +1,7 @@
 # OWIN.Windsor.DependencyResolverScopeMiddleware
 Creates a Windsor dependency scope per OWIN WebAPI request allowing to use a per request lifestyle component registration in a self-host environment.
 
-##Usage
+# Usage
 
 1.  Add the "OWIN.Windsor.DependencyResolverScopeMiddleware" nuget package to your OWIN self-hosted WebAPI project.
 2.  In your Startup.cs file, add "using OWIN.Windsor.DependencyResolverScopeMiddleware;" and configure your Windsor container.
